@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+/* 
+import PropChildrenSection from "./PropsChildren/PropChildrenSection";
+import CompoundComponentsSection from "./CompoundComponents/CompoundComponentsSection";
+import ReactContextSection from "./ReactContext/ReactContextSection";
+import HeadlessComponentsSection from "./HeadlessComponents/HeadlessComponentsSection";
+import RenderPropsSection from "./RenderProps/RenderPropsSection";
+import CustomHookSection from "./CustomHooks/CustomHookSection";
+*/
+
+import ReactRouterSection from "./ReactRouter6/ReactRouterSection";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<main>
+			<div>
+				{/*
+				<h1>Hola mundo</h1>	
+				<PropChildrenSection/>
+				<CompoundComponentsSection/>
+				<ReactContextSection/>
+				<HeadlessComponentsSection/>
+				<RenderPropsSection/>
+				<CustomHookSection/>
+				*/}
+			</div>
+			<ReactRouterSection/>
+		</main>
+	);
 }
 
 export default App;
