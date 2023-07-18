@@ -15,29 +15,37 @@ import "../server"
 import VanPricing from "./Pages/VanPricing";
 import VanPhotos from "./Pages/VanPhotos";
 import VanDetails from "./Pages/VanDetails";
+import NotFound from "./Pages/NotFound";
+import Login from "./Pages/Login";
+import AuthRequired from "./AuthRequired";
 
 export default function ReactRouterSection(){
     return (
         <BrowserRouter>
             <Routes> 
                 <Route path="/" element={<Layout/>}>
+                    
                     <Route index element={<Home/>}/> 
                     <Route path="about" element={<About/>}/>
                     <Route path="vans" element={<List/>}/>
                     <Route path="vans/:id" element={<Van/>}/>
+                    <Route path="login" element={<Login />}/>
 
-                    <Route path="host" element={<HostLayout/>}>
-                        <Route index element={<Dashboard/>}/>
-                        <Route path="income" element={<Income/>}/>
-                        <Route path="vans" element={<HostVans/>}/>
+                    <Route element={<AuthRequired/>}>
+                        <Route path="host" element={<HostLayout/>}>
+                            <Route index element={<Dashboard/>}/>
+                            <Route path="income" element={<Income/>}/>
+                            <Route path="vans" element={<HostVans/>}/>
+                            <Route path="reviews" element={<Reviews/>}/>
 
-                        <Route path="vans/:id" element={<HostVan/>}>
-                            <Route index element={<VanDetails/>}/>
-                            <Route path="pricing" element={<VanPricing/>}/>
-                            <Route path="photos" element={<VanPhotos/>}/>
+                            <Route path="vans/:id" element={<HostVan/>}>
+                                <Route index element={<VanDetails/>}/>
+                                <Route path="pricing" element={<VanPricing/>}/>
+                                <Route path="photos" element={<VanPhotos/>}/>
+                            </Route>
                         </Route>
-                        <Route path="reviews" element={<Reviews/>}/>
                     </Route>
+                    <Route path="*" element={<NotFound/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>
