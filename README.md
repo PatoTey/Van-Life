@@ -1,1 +1,1 @@
-A proyecto from Advance React course on Scrimba!
+A proyect from Advance React course on Scrimba!
